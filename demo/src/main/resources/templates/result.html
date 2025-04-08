@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Results</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Phishing Detection Result</h1>
+
+    <div th:if="${error}" class="alert alert-danger">
+        <p th:text="${error}"></p>
+    </div>
+
+    <div th:unless="${error}" class="result-container">
+        <h3 th:text="${result}"></h3>
+        <a href="/" class="btn btn-secondary">Check Another URL</a>
+    </div>
+</div>
+</body>
+</html>
